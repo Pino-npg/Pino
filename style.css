@@ -101,8 +101,8 @@ h1 {
 }
 
 .logo {
-  width: 128px!important;
-  height: 128px!important;
+  width: 128px;
+  height: 128px;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
@@ -127,4 +127,9 @@ h1 {
   font-size: 3.2em;
   margin: 0;
   color: white;
+}
+
+.logo {
+  width: 128px;
+  height: 128px;
 }
