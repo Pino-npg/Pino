@@ -110,15 +110,14 @@ h1 {
 .logo-title {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 15px;
+  justify-content: center;
+  gap: 12px; /* Spazio tra logo e titolo */
   margin-top: 20px;
-  padding-left: 20px;
 }
 
 .logo-title .logo {
-  width: 192px;
-  height: 192px;
+  width: 80px;   /* Aumenta la dimensione qui */
+  height: 80px;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
