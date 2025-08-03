@@ -117,8 +117,8 @@ h1 {
 }
 
 .logo-title .logo {
-  width: 96px;
-  height: 96px;
+  width: 192px;
+  height: 192px;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
