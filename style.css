@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('banner.jpg'); /* L'immagine è nella stessa cartella del CSS */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+header {
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.language-switcher button {
+  margin: 0 5px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.language-switcher button:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.audio-control {
+  margin-top: 10px;
+  font-size: 28px;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: opacity 0.3s;
+}
+
+.audio-control:hover {
+  opacity: 1;
+}
+
+.links {
+  margin: 30px 0;
+}
+
+.links a {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #aaddff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.links a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.collections {
+  margin-top: 30px;
+}
+
+.collections ul {
+  list-style: none;
+  padding: 0;
+}
+
+.collections li a {
+  color: #fff;
+  text-decoration: underline;
+  font-size: 1.2em;
+}
+
+#description {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  line-height: 1.6;
+}
