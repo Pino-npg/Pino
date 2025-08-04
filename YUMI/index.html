@@ -9,30 +9,33 @@
   <link rel="icon" href="favicon.png" sizes="16x16" type="image/png"/>
 </head>
 <body>
-
   <div class="overlay"></div>
-  <div class="container"></div>  
+  <div class="container"></div>
+
   <header>
-    <div class="language-menu">
-      <button class="language-toggle" onclick="toggleLanguageMenu()">🌐</button>
-      <div class="language-options" id="languageOptions">
-        <button onclick="setLanguage('en')">🇬🇧 English</button>
-        <button onclick="setLanguage('it')">🇮🇹 Italiano</button>
-        <button onclick="setLanguage('es')">🇪🇸 Español</button>
-        <button onclick="setLanguage('fr')">🇫🇷 Français</button>
-        <button onclick="setLanguage('de')">🇩🇪 Deutsch</button>
-        <button onclick="setLanguage('zh')">🇨🇳 中文</button>
-        <button onclick="setLanguage('ar')">🇸🇦 العربية</button>
-        <button onclick="setLanguage('eo')">🌍 Esperanto</button>
+    <div class="top-bar">
+      <div class="audio-control" onclick="toggleMusic()">🎧</div>
+      <div class="language-menu">
+        <button class="language-toggle" onclick="toggleLanguageMenu()">🌐</button>
+        <div class="language-options" id="languageOptions">
+          <button onclick="setLanguage('en')">🇬🇧</button>
+          <button onclick="setLanguage('it')">🇮🇹</button>
+          <button onclick="setLanguage('es')">🇪🇸</button>
+          <button onclick="setLanguage('fr')">🇫🇷</button>
+          <button onclick="setLanguage('de')">🇩🇪</button>
+          <button onclick="setLanguage('zh')">🇨🇳</button>
+          <button onclick="setLanguage('ar')">🇸🇦</button>
+          <button onclick="setLanguage('eo')">🌍</button>
+        </div>
+      </div>
     </div>
-    <div class="audio-control" onclick="toggleMusic()">🎧</div>
 
     <div class="logo-title">
       <h1>YUMI</h1>
       <img src="favicon.png" alt="Logo" class="logo">
     </div>
   </header>
- 
+
   <main>
     <section id="description"></section>
 
@@ -43,9 +46,7 @@
     <div class="links">
       <a href="https://opensea.io/collection/yumi-664115313" target="_blank">Opensea</a>
       <a href="https://rarible.com/collection/base/0x95f58e17fda667283cb44a09ba45951fa0d3a38e/items" target="_blank">Rarible</a>
-      <h2></h2>
-      <ul>
-    </section>
+    </div>
   </main>
 
   <audio id="bg-music" loop></audio>
