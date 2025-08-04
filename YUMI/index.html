@@ -316,11 +316,6 @@ Projekto de -Pino-`
       }
     }
 
-    document.querySelectorAll(".language-switcher button").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        setLanguage(btn.dataset.lang);
-      });
-    });
 
     // Set default based on browser
     const userLang = navigator.language.slice(0, 2);
@@ -340,10 +335,7 @@ Projekto de -Pino-`
     }
   }
 
-  function setLanguage(lang) {
-    console.log("Lingua selezionata:", lang);
-    // Qui potresti aggiungere il cambio lingua con JavaScript, o un redirect se usi file diversi
-  }
+
 
   // Facoltativo: chiude il menu se clicchi fuori
   document.addEventListener('click', function (event) {
