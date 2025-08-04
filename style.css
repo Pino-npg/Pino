@@ -30,43 +30,39 @@ h1 {
 
 .language-menu {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
+  top: 10px;
+  right: 10px;
 }
 
 .language-toggle {
-  background-color: rgba(255,255,255,0.2);
+  font-size: 24px;
+  background: transparent;
   border: none;
-  padding: 8px 12px;
-  font-size: 20px;
   cursor: pointer;
-  border-radius: 8px;
-  backdrop-filter: blur(5px);
-  color: white;
-}
 
-.language-options {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 40px;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  border-radius: 8px;
-  padding: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-}
+  .language-options {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 999;
+    padding: 10px;
+  }
+  
 
-.language-options button {
-  background: none;
-  border: none;
-  color: white;
-  padding: 6px 10px;
-  text-align: left;
-  cursor: pointer;
-  font-size: 14px;
-}
+  .language-options button {
+    background: none;
+    border: none;
+    padding: 5px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
 
 .language-options button:hover {
   background-color: rgba(255,255,255,0.2);
@@ -75,9 +71,15 @@ h1 {
 
 .audio-button {
   position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 10;
+  top: 10px;
+  left: 10px;
+}
+
+.audio-button button {
+  font-size: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .audio-control {
@@ -134,23 +136,15 @@ h1 {
   line-height: 1.6;
 }
 
-.logo {
-  width: 200px;
-  height: auto;
-  max-width: none;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+.logo-title {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
 }
 
-.logo-title {
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 500;
+.logo {
+  width: 64px;
+  height: auto;
 }
 
 .logo-title .logo {

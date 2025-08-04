@@ -13,6 +13,9 @@
   <div class="overlay"></div>
   <div class="container"></div>  
   <header>
+    <div class="audio-button">
+      <button onclick="toggleMusic()">🎧</button>
+    </div>
     <div class="language-menu">
       <button class="language-toggle" onclick="toggleLanguageMenu()">🌐</button>
       <div class="language-options" id="languageOptions">
@@ -148,11 +151,6 @@ Lia arto celas rompi barojn, paroli komunan lingvon kaj memorigi nin, ke profund
     function toggleLanguageMenu() {
       const menu = document.getElementById("languageOptions");
       menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-    }
-  
-    function setLanguage(lang) {
-      console.log("Lingua selezionata:", lang);
-      // Qui inserisci il tuo script di cambio lingua
     }
   
     // Chiudi il menu se clicchi fuori
