@@ -9,29 +9,29 @@
   <link rel="icon" href="favicon.png" sizes="16x16" type="image/png"/>
 </head>
 <body>
+
   <div class="overlay"></div>
   <div class="container"></div>
-
   <header>
     <div class="audio-button">
       <button onclick="toggleMusic()">🎧</button>
-      <div class="language-menu">
-        <button class="language-toggle" onclick="toggleLanguageMenu()">🌐</button>
-        <div class="language-options" id="languageOptions">
-          <button onclick="setLanguage('en')">🇬🇧 English</button>
-          <button onclick="setLanguage('it')">🇮🇹 Italiano</button>
-          <button onclick="setLanguage('es')">🇪🇸 Español</button>
-          <button onclick="setLanguage('fr')">🇫🇷 Français</button>
-          <button onclick="setLanguage('de')">🇩🇪 Deutsch</button>
-          <button onclick="setLanguage('zh')">🇨🇳 中文</button>
-          <button onclick="setLanguage('ar')">🇸🇦 العربية</button>
-          <button onclick="setLanguage('ru')">🇷🇺 Русский</button>
-          <button onclick="setLanguage('ja')">🇯🇵 日本語</button>
-          <button onclick="setLanguage('pt')">🇵🇹 Português</button>
-          <button onclick="setLanguage('eo')">🌍 Esperanto</button>
+    </div>
+    <div class="language-menu">
+      <button class="language-toggle" onclick="toggleLanguageMenu()">🌐</button>
+      <div class="language-options" id="languageOptions">
+        <button onclick="setLanguage('en')">🇬🇧 English</button>
+        <button onclick="setLanguage('it')">🇮🇹 Italiano</button>
+        <button onclick="setLanguage('es')">🇪🇸 Español</button>
+        <button onclick="setLanguage('fr')">🇫🇷 Français</button>
+        <button onclick="setLanguage('de')">🇩🇪 Deutsch</button>
+        <button onclick="setLanguage('zh')">🇨🇳 中文</button>
+        <button onclick="setLanguage('ar')">🇸🇦 العربية</button>
+        <button onclick="setLanguage('ru')">🇷🇺 Русский</button>
+        <button onclick="setLanguage('ja')">🇯🇵 日本語</button>
+        <button onclick="setLanguage('pt')">🇵🇹 Português</button>
+        <button onclick="setLanguage('eo')">🌍 Esperanto</button>
         </div>
       </div>
-    </div>
 
     <div class="logo-title">
       <h1>YUMI</h1>
@@ -258,93 +258,6 @@ Projekt signiert -Pino-`,
 - الترتيب حسب الندرة.
 - دفعة NFT على Base.
 مشروع موقّع -Pino-`,
-      ru: `YUMI — это генеративная коллекция NFT, состоящая из 1000 девочек-аниме, распределенных по сети Base. 
-Каждый персонаж уникален и создан с помощью настраиваемых скриптов на основе движка HashLips.
-Технические характеристики:
-- Общая коллекция: 1000 NFT.
-- Стандарт: ERC-721.
-- Сеть: Base Метаданные на IPFS. 
-- Статические JSON, сгенерированные с помощью настраиваемых скриптов.
-- Редкость: в NFT присутствуют детали редкости, которые украшают коллекцию. 
-- Встроенные роялти: проценты, определенные в метаданных.
-- Структура файлов -
-Коллекция состоит из:
-- images → сгенерированные изображения PNG.
-- json → метаданные NFT с атрибутами, именем, описанием, роялти, редкостью.
-- banner.
-- README.
-- Смарт-контракт -
-- Название контракта: YUMI.
-- Адрес: 0x95f58e17fdA667283Cb44a09Ba45951fa0D3a38E .
-- Скомпилировано с помощью: Solidity 0.8.20 (с оптимизацией).
-- Фреймворк: OpenZeppelin Contracts.
-Использованные модули и инструменты:
-- Visual Studio Code.
-- HashLips Art Engine.
-- Filebase.
-- Lighthouse.
-Пользовательские скрипты .mjs и js для:
-- сортировки по редкости.
-- пакетного чеканки NFT на Base.
-Проект подписан -Pino-`,
-     ja: `YUMIは、Baseネットワーク上に展開される1,000体のアニメ少女からなるジェネレーティブNFTコレクションです。  
-各キャラクターは、HashLipsエンジンを基盤としたカスタムスクリプトにより生成され、唯一無二のものです。  
-技術的特徴:  
-- 総コレクション数: 1,000 NFT。  
-- 標準: ERC-721。  
-- ネットワーク: Base。メタデータはIPFS上に保存。
-- カスタムスクリプトで生成された静的JSON。
-- 希少性：NFTにはコレクションの価値を高める希少性の詳細が含まれています。
-- 組み込みロイヤルティ：メタデータで定義された割合。
-- ファイル構造 -
-コレクションは次の構成です：
-- images → 生成されたPNG画像。
-- json → NFTのメタデータ（属性、名前、説明、ロイヤルティ、希少性）。
-- banner.
-- README。
-- スマートコントラクト -
-- コントラクト名：YUMI。
-- アドレス：0x95f58e17fdA667283Cb44a09Ba45951fa0D3a38E。
-- コンパイル言語：Solidity 0.8.20（最適化済み）。
-- フレームワーク: OpenZeppelin Contracts。
-使用したモジュールとツール:
-- Visual Studio Code。
-- HashLips Art Engine。
-- Filebase。
-- Lighthouse。
-カスタムスクリプト .mjs と js による:
-- 希少度による並べ替え。
-- Base での NFT バッチミント。
-プロジェクト署名 -Pino-`,
-     pt: `YUMI é uma coleção NFT generativa composta por 1.000 meninas anime, distribuídas na rede Base. 
-Cada personagem é única e gerada por meio de scripts personalizados baseados no motor HashLips.
-Características técnicas:
-- Coleção total: 1000 NFT.
-- Padrão: ERC-721.
-- Rede: Base Metadados em IPFS. 
-- JSON estáticos gerados por scripts personalizados.
-- Raridade: nos NFT existem detalhes de raridade que enriquecem a coleção. 
-- Royalties integradas: percentagens definidas nos metadados.
-- Estrutura dos ficheiros -
-A coleção é composta por:
-- images → imagens PNG geradas.
-- json → metadados NFT com atributos, nome, descrição, royalties, raridade.
-- banner.
-- README.
-- Contrato inteligente -
-- Nome do contrato: YUMI.
-- Endereço: 0x95f58e17fdA667283Cb44a09Ba45951fa0D3a38E .
-- Compilado com: Solidity 0.8.20 (com otimização).
-- Framework: OpenZeppelin Contracts.
-Módulos e ferramentas utilizados:
-- Visual Studio Code.
-- HashLips Art Engine.
-- Filebase.
-- Lighthouse.
-Scripts personalizados .mjs e js para:
-- ordenação por raridade.
-- cunhagem em lote de NFT na Base.
-Projeto assinado -Pino-`,
       eo: `YUMI estas generativa NFT-kolekto de 1000 anime-knabinoj, distribuitaj en la reto Base.
 Ĉiu rolulo estas unika kaj generita per kutimaj skriptoj bazitaj sur la HashLips-motoro.
 Teknikaj Trajtoj:
@@ -383,9 +296,6 @@ Projekto de -Pino-`
       de: "assets/music/YUMI.mp3",
       zh: "assets/music/YUMI.mp3",
       ar: "assets/music/YUMI.mp3",
-      ru: "assets/music/YUMI.mp3",
-      ja: "assets/music/YUMI.mp3",
-      pt: "assets/music/YUMI.mp3",
       eo: "assets/music/YUMI.mp3"
     };
 
