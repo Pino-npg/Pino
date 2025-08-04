@@ -331,24 +331,28 @@ Projekto de -Pino-`
     }, { once: true });
   </script>
   <script>
-    function toggleLanguageMenu() {
-      const menu = document.getElementById("languageOptions");
-      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+  function toggleLanguageMenu() {
+    const menu = document.getElementById('languageOptions');
+    if (menu.style.display === 'flex') {
+      menu.style.display = 'none';
+    } else {
+      menu.style.display = 'flex';
     }
-  
-    function setLanguage(lang) {
-      console.log("Lingua selezionata:", lang);
-      // Qui inserisci il tuo script di cambio lingua
+  }
+
+  function setLanguage(lang) {
+    console.log("Lingua selezionata:", lang);
+    // Qui potresti aggiungere il cambio lingua con JavaScript, o un redirect se usi file diversi
+  }
+
+  // Facoltativo: chiude il menu se clicchi fuori
+  document.addEventListener('click', function (event) {
+    const menu = document.getElementById('languageOptions');
+    const toggle = document.querySelector('.language-toggle');
+    if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+      menu.style.display = 'none';
     }
-  
-    // Chiudi il menu se clicchi fuori
-    document.addEventListener("click", function(event) {
-      const menu = document.getElementById("languageOptions");
-      const toggle = document.querySelector(".language-toggle");
-      if (!toggle.contains(event.target) && !menu.contains(event.target)) {
-        menu.style.display = "none";
-      }
-    });
-  </script>
+  });
+</script>
 </body>
 </html>
