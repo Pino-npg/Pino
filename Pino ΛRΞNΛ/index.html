@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pino ΛRΞNΛ</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.png" sizes="32x32" type="image/png"/>
+  <link rel="icon" href="favicon.png" sizes="16x16" type="image/png"/>
+</head>
+<body>
+
+  <div class="overlay"></div>
+  <div class="container"></div>
+  <header>
+    <div class="audio-button">
+      <button onclick="toggleMusic()">🎧</button>
+    </div>
+    <div class="language-menu">
+      <button class="language-toggle" onclick="toggleLanguageMenu()">🌐</button>
+      <div class="language-options" id="languageOptions">
+        <button onclick="setLanguage('en')">🇬🇧 English</button>
+        <button onclick="setLanguage('it')">🇮🇹 Italiano</button>
+        <button onclick="setLanguage('es')">🇪🇸 Español</button>
+        <button onclick="setLanguage('fr')">🇫🇷 Français</button>
+        <button onclick="setLanguage('de')">🇩🇪 Deutsch</button>
+        <button onclick="setLanguage('zh')">🇨🇳 中文</button>
+        <button onclick="setLanguage('ar')">🇸🇦 العربية</button>
+        <button onclick="setLanguage('ru')">🇷🇺 Русский</button>
+        <button onclick="setLanguage('ja')">🇯🇵 日本語</button>
+        <button onclick="setLanguage('pt')">🇵🇹 Português</button>
+        <button onclick="setLanguage('eo')">🌍 Esperanto</button>
+        </div>
+      </div>
+
+    <div class="logo-title">
+      <h1>Pino ΛRΞNΛ</h1>
+      <img src="favicon.png" alt="Logo" class="logo">
+    </div>
+  </header>
+
+  <main>
+    <section id="description"></section>
+
+    <div class="links">
+      <a href="https://pino-npg.github.io/Pino/">Pino</a>
+    </div>
+
+    <div class="links">
+      <a href="https://opensea.io/collection/url" target="_blank">Opensea</a>
+      <a href="https://magiceden.io/collections/base/contract" target="_blank">Magic Eden</a>
+      <a href="https://rarible.com/collection/base/contract/items" target="_blank">Rarible</a>
+    </div>
+  </main>
+
+  <audio id="bg-music" loop></audio>
+
+  <script>
+    const descriptions = {
+      en: `Pino ΛRΞNΛ is a generative NFT collection consisting of 1,000 digital characters distributed on the Base network.
+Each NFT is unique and generated using custom scripts based on HashLips Art Engine and Python.
+
+Technical characteristics:
+• Total collection: 1,000 NFTs (990 generic + 10 special).
+•    Standard: ERC-721.
+•    Network: Base.
+•    Metadata: Static JSON hosted on IPFS.
+•    Rarity: Each NFT has unique traits and rarity combinations.
+•    Integrated royalties: Percentages defined in the metadata (5%).
+
+Collection file structure:
+•    images → high-quality generative WebP images.
+•	 json → NFT metadata containing name, description, attributes, rarity, and royalties.
+•    banner → main image of the collection.
+•    README → collection documentation.
+
+Smart Contract:
+•    Contract name: Pino ΛRΞNΛ.
+•    Address: (contract).
+•    Compiled with: Solidity 0.8.20 (optimisation enabled) .
+•    Framework: OpenZeppelin Contracts (ERC721URIStorage + Ownable + IERC2981).
+•    Key features: sequential minting, specific minting, baseURI modification, ERC2981 royalties.
+
+Tools and modules used:
+•    IDE: Visual Studio Code.
+•    Generative engine: HashLips Art Engine.
+•	 Languages: JavaScript/Node.js, Python.
+•    Decentralised storage: IPFS via Filebase and Lighthouse.
+•    Custom scripts: .mjs, .js and .py for rarity management, JSON updating and NFT batch minting on the Base network.
+•    The project also includes the game ΛRΞNΛ.
+
+Enjoy.
+
+Project signed: -Pino-`,
+      it: `Pino ΛRΞNΛ è una collezione NFT generativa composta da 1.000 personaggi digitali, distribuiti sulla rete Base.
+Ogni NFT è unico e generato tramite script personalizzati basati su HashLips Art Engine e Python.
+
+Caratteristiche tecniche:
+•	 Collezione totale: 1.000 NFT (990 generici + 10 speciali).
+•    Standard: ERC-721.
+•	 Rete: Base.
+•	 Metadati: JSON statici ospitati su IPFS.
+•	 Rarità: Ogni NFT presenta tratti e combinazioni di rarità uniche.
+•	 Royalties integrate: Percentuali definite nei metadata (5%).
+
+Struttura dei file della collezione:
+•	 images → immagini WebP generative ad alta qualità.
+•	 json → metadati NFT contenenti nome, descrizione, attributi, rarità e royalties.
+•	 banner → immagine principale della collezione.
+•	 README → documentazione della collezione.
+
+Smart Contract:
+•	 Nome contratto: Pino ΛRΞNΛ.
+•	 Indirizzo: (contratto).
+•	 Compilato con: Solidity 0.8.20 (ottimizzazione attivata).
+•	 Framework: OpenZeppelin Contracts (ERC721URIStorage + Ownable + IERC2981).
+•	 Funzionalità chiave: mint sequenziale, mint specifico, modifica baseURI, royalties ERC2981.
+
+Strumenti e moduli utilizzati:
+•	 IDE: Visual Studio Code.
+•	 Engine generativo: HashLips Art Engine.
+•	 Linguaggi: JavaScript / Node.js, Python.
+•	 Storage decentralizzato: IPFS via Filebase e Lighthouse.
+•	 Script custom: .mjs, .js e .py per gestione rarità, aggiornamento JSON e batch minting NFT sulla rete Base.
+•    Il progetto comprende anche il gioco ΛRΞNΛ.
+
+Buon divertimento.
+
+Progetto firmato: -Pino-`,
+
+      es: `Pino ΛRΞNΛ es una colección generativa de NFT compuesta por 1000 personajes digitales, distribuidos en la red Base.
+Cada NFT es único y se genera mediante scripts personalizados basados en HashLips Art Engine y Python.
+
+Características técnicas:
+•    Colección total: 1000 NFT (990 genéricos + 10 especiales).
+•    Estándar: ERC-721.
+•    Red: Base.
+•    Metadatos: JSON estáticos alojados en IPFS.
+•    Rareza: cada NFT presenta rasgos y combinaciones de rareza únicos.
+•    Regalías integradas: porcentajes definidos en los metadatos (5 %).
+
+Estructura de los archivos de la colección:
+•    images → imágenes WebP generativas de alta calidad.
+•	 json → metadatos NFT que contienen nombre, descripción, atributos, rareza y regalías.
+•    banner → imagen principal de la colección.
+•    README → documentación de la colección.
+
+Contrato inteligente:
+•    Nombre del contrato: Pino ΛRΞNΛ.
+•    Dirección: (contrato).
+•    Compilado con: Solidity 0.8.20 (optimización activada) .
+•    Marco: OpenZeppelin Contracts (ERC721URIStorage + Ownable + IERC2981).
+•    Funcionalidades clave: acuñación secuencial, acuñación específica, modificación de baseURI, regalías ERC2981.
+
+Herramientas y módulos utilizados:
+•    IDE: Visual Studio Code.
+•    Motor generativo: HashLips Art Engine.
+•    Lenguajes: JavaScript / Node.js, Python.
+•    Almacenamiento descentralizado: IPFS a través de Filebase y Lighthouse.
+•    Scripts personalizados: .mjs, .js y .py para la gestión de la rareza, la actualización de JSON y la acuñación por lotes de NFT en la red Base.
+•    El proyecto también incluye el juego ΛRΞNΛ.
+
+Que lo disfrutes.
+
+Proyecto firmado: -Pino-`,
+      fr: `Pino ΛRΞNΛ est une collection NFT générative composée de 1 000 personnages numériques, distribués sur le réseau Base.
+Chaque NFT est unique et généré à l'aide de scripts personnalisés basés sur HashLips Art Engine et Python.
+
+Caractéristiques techniques :
+•    Collection totale : 1 000 NFT (990 génériques + 10 spéciaux).
+•    Norme : ERC-721.
+•    Réseau : Base.
+•    Métadonnées : JSON statiques hébergées sur IPFS.
+•    Rareté : chaque NFT présente des caractéristiques et des combinaisons de rareté uniques.
+•    Royalties intégrées : pourcentages définis dans les métadonnées (5 %).
+
+Structure des fichiers de la collection :
+•    images → images WebP génératives de haute qualité.
+•	 json → métadonnées NFT contenant le nom, la description, les attributs, la rareté et les redevances.
+•    banner → image principale de la collection.
+•    README → documentation de la collection.
+
+Contrat intelligent :
+•    Nom du contrat : Pino ΛRΞNΛ.
+•    Adresse : (contrat).
+•    Compilé avec : Solidity 0.8.20 (optimisation activée) .
+•    Cadre : OpenZeppelin Contracts (ERC721URIStorage + Ownable + IERC2981).
+•    Fonctionnalités clés : frappe séquentielle, frappe spécifique, modification baseURI, redevances ERC2981.
+
+Outils et modules utilisés :
+•    IDE : Visual Studio Code.
+•    Moteur génératif : HashLips Art Engine.
+•    Langages : JavaScript / Node.js, Python.
+•    Stockage décentralisé : IPFS via Filebase et Lighthouse.
+•    Scripts personnalisés : .mjs, .js et .py pour la gestion de la rareté, la mise à jour JSON et la frappe par lots de NFT sur le réseau Base.
+•    Le projet comprend également le jeu ΛRΞNΛ.
+
+Amusez-vous bien.
+
+Projet signé : -Pino-`,
+      de: `Pino ΛRΞNΛ ist eine generative NFT-Sammlung, die aus 1.000 digitalen Charakteren besteht, die über das Base-Netzwerk verteilt sind.
+Jeder NFT ist einzigartig und wird über benutzerdefinierte Skripte auf Basis der HashLips Art Engine und Python generiert.
+
+Technische Merkmale:
+•    Gesamtsammlung: 1.000 NFT (990 generische + 10 spezielle).
+•    Standard: ERC-721.
+•    Netzwerk: Base.
+•    Metadaten: Statische JSON, gehostet auf IPFS.
+•    Seltenheit: Jeder NFT weist einzigartige Merkmale und Seltenheitskombinationen auf.
+•    Integrierte Lizenzgebühren: In den Metadaten definierte Prozentsätze (5 %).
+
+Dateistruktur der Sammlung:
+•    images → generative WebP-Bilder in hoher Qualität.
+•    json → NFT-Metadaten mit Name, Beschreibung, Attributen, Seltenheit und Lizenzgebühren.
+•    banner → Hauptbild der Sammlung.
+•    README → Dokumentation der Sammlung.
+
+Smart Contract:
+•    Vertragsname: Pino ΛRΞNΛ.
+•    Adresse: (Vertrag).
+•    Erstellt mit: Solidity 0.8.20 (Optimierung aktiviert).
+•    Framework: OpenZeppelin Contracts (ERC721URIStorage + Ownable + IERC2981).
+•    Schlüsselfunktionen: sequentielles Minting, spezifisches Minting, Änderung von baseURI, Lizenzgebühren ERC2981.
+
+Verwendete Tools und Module:
+•    IDE: Visual Studio Code.
+•    Generative Engine: HashLips Art Engine.
+•    Sprachen: JavaScript / Node.js, Python.
+•    Dezentraler Speicher: IPFS über Filebase und Lighthouse.
+•    Benutzerdefinierte Skripte: .mjs, .js und .py für die Verwaltung der Seltenheit, JSON-Aktualisierung und Batch-Minting von NFTs im Base-Netzwerk.
+•    Das Projekt umfasst auch das Spiel ΛRΞNΛ.
+
+Viel Spaß.
+
+Projekt unterzeichnet: -Pino-`,
+      zh: `Pino ΛRΞNΛ 是一套生成式 NFT 系列，包含 1,000 个数字角色，部署于 Base 网络。
+每个 NFT 均通过基于 HashLips Art Engine 和 Python 的定制脚本生成，具有唯一性。
+
+技术特性：
+•    总藏品量：1,000 个 NFT（990 个普通版 + 10 个特别版）。
+•    标准：ERC-721。
+•    网络：Base。
+•    元数据：托管于IPFS的静态JSON。
+•    稀有度：每个NFT具有独特的特征和稀有度组合。
+•    内置版税：元数据中定义的百分比（5%）。
+
+系列文件结构：
+•    images → 高质量生成式WebP图像。
+•    json → 包含名称、描述、属性、稀有度及版税的NFT元数据。
+•    banner → 系列主视觉图。
+•    README → 系列文档说明。
+
+智能合约：
+•    合约名称：Pino ΛRΞNΛ。
+•    地址：（合约地址）。
+•    编译环境：Solidity 0.8.20 （已启用优化）。
+•    框架：OpenZeppelin Contracts（ERC721URIStorage + Ownable + IERC2981）。
+•    核心功能：顺序铸造、特定铸造、基础URI修改、ERC2981版税机制。
+
+使用工具与模块：
+•    IDE：Visual Studio Code。
+•    生成引擎：HashLips Art Engine。
+•    编程语言：JavaScript / Node.js、Python。
+•    去中心化存储：通过Filebase和Lighthouse接入IPFS。
+•    自定义脚本：用于稀有度管理、JSON更新及Base网络批量铸造NFT的.mjs、.js和.py脚本。
+•    项目同时包含游戏ΛRΞNΛ。
+
+祝您玩得愉快。
+
+项目署名：-Pino-`,
+      ar: `Pino ΛRΞNΛ هي مجموعة NFT توليدية تتكون من 1000 شخصية رقمية، موزعة على شبكة Base.
+كل NFT فريد من نوعه ويتم إنشاؤه عبر نصوص برمجية مخصصة تعتمد على HashLips Art Engine و Python.
+
+الخصائص التقنية:
+•    المجموعة الإجمالية: 1000 NFT (990 عامة + 10 خاصة).
+•    المعيار: ERC-721.
+•    الشبكة: Base.
+•    البيانات الوصفية: JSON ثابتة مستضافة على IPFS.
+•    الندرة: تتميز كل NFT بسمات وتركيبات فريدة من نوعها.
+•    الرسوم المتكاملة: النسب المئوية المحددة في البيانات الوصفية (5٪).
+
+هيكل ملفات المجموعة:
+•    images → صور WebP عالية الجودة.
+•    json → بيانات تعريفية NFT تحتوي على الاسم والوصف والسمات والندرة والرسوم.
+•    banner → الصورة الرئيسية للمجموعة.
+•    README → وثائق المجموعة.
+
+العقد الذكي:
+•    اسم العقد: Pino ΛRΞNΛ.
+•    العنوان: (العقد).
+•    تم تجميعه باستخدام: Solidity 0.8.20 (التحسين مفعل).
+•    الإطار: OpenZeppelin Contracts (ERC721URIStorage + Ownable + IERC2981).
+•    الوظائف الرئيسية: سك متسلسل، سك محدد، تعديل baseURI، حقوق ملكية ERC2981.
+
+الأدوات والوحدات المستخدمة:
+•    IDE: Visual Studio Code.
+•    محرك توليدي: HashLips Art Engine.
+•    اللغات: JavaScript / Node.js، Python.
+•    التخزين اللامركزي: IPFS عبر Filebase و Lighthouse.
+•    نصوص مخصصة: .mjs، .js و .py لإدارة الندرة، تحديث JSON وسك NFT دفعي على شبكة Base.
+•    يشمل المشروع أيضًا لعبة ΛRΞNΛ.
+
+استمتعوا.
+
+مشروع موقع: -Pino-`,
+      ru: `Pino ΛRΞNΛ — это генеративная коллекция NFT, состоящая из 1000 цифровых персонажей, распределенных по сети Base.
+Каждый NFT уникален и сгенерирован с помощью настраиваемых скриптов на основе HashLips Art Engine и Python.
+
+Технические характеристики:
+•    Общая коллекция: 1000 NFT (990 обычных + 10 специальных).
+•    Стандарт: ERC-721.
+•    Сеть: Base.
+•    Метаданные: статические JSON, размещенные на IPFS.
+•    Редкость: каждый NFT имеет уникальные черты и комбинации редкости.
+•    Встроенные роялти: проценты, определенные в метаданных (5%).
+
+Структура файлов коллекции:
+•    images → высококачественные генеративные изображения WebP.
+•    json → метаданные NFT, содержащие название, описание, атрибуты, редкость и роялти.
+•    banner → главное изображение коллекции.
+•    README → документация коллекции.
+
+Смарт-контракт:
+•    Название контракта: Pino ΛRΞNΛ.
+•    Адрес: (контракт).
+•    Скомпилировано с помощью: Solidity 0.8.20 (оптимизация включена).
+•    Фреймворк: OpenZeppelin Contracts (ERC721URIStorage + Ownable + IERC2981).
+•    Ключевые функции: последовательное чеканение, специфическое чеканение, изменение baseURI, роялти ERC2981.
+
+Использованные инструменты и модули:
+•    IDE: Visual Studio Code.
+•    Генеративный движок: HashLips Art Engine.
+•    Языки: JavaScript / Node.js, Python.
+•    Децентрализованное хранилище: IPFS через Filebase и Lighthouse.
+•    Пользовательские скрипты: .mjs, .js и .py для управления редкостью, обновления JSON и пакетного чеканки NFT в сети Base.
+•    Проект также включает в себя игру ΛRΞNΛ.
+
+Приятного времяпрепровождения.
+
+Проект подписан: -Pino-`,
+      ja: `Pino ΛRΞNΛは、Baseネットワーク上に配布された1,000体のデジタルキャラクターで構成されるジェネレーティブNFTコレクションです。
+各NFTはユニークであり、HashLips Art EngineとPythonに基づくカスタムスクリプトによって生成されます。
+
+技術的特徴：
+•    総コレクション数：1,000 NFT（990体のジェネリック＋10体のスペシャル）。
+•    標準：ERC-721。
+•    ネットワーク：Base。
+•    メタデータ：IPFSでホストされる静的JSON。
+•    レアリティ：各NFTは、ユニークな特徴とレアリティの組み合わせを持っています。
+•    組み込みのロイヤリティ：メタデータで定義された割合（5%）。
+
+コレクションのファイル構造：
+•    images → 高品質の生成型WebP画像。
+•    json → 名前、説明、属性、レアリティ、ロイヤリティを含む NFT メタデータ。
+•    banner → コレクションのメイン画像。
+•    README → コレクションのドキュメント。
+
+スマートコントラクト：
+•    契約名：Pino ΛRΞNΛ。
+•    アドレス：(契約)。
+•    コンパイル：Solidity 0.8.20 （最適化有効）。
+•    フレームワーク：OpenZeppelin Contracts（ERC721URIStorage + Ownable + IERC2981）。
+•    主な機能：順次ミント、特定ミント、baseURIの変更、ERC2981ロイヤルティ。
+
+使用ツールおよびモジュール：
+•    IDE：Visual Studio Code。
+•    生成エンジン：HashLips Art Engine。
+•    言語：JavaScript / Node.js、Python。
+•    分散型ストレージ：Filebase および Lighthouse 経由の IPFS。
+•    カスタムスクリプト：レアリティ管理、JSON 更新、Base ネットワーク上での NFT バッチミントのための .mjs、.js、.py。
+•    このプロジェクトには、ゲーム ΛRΞNΛ も含まれています。
+
+お楽しみください。
+
+署名付きプロジェクト：-Pino-`,
+      pt: `Pino ΛRΞNΛ é uma coleção NFT generativa composta por 1.000 personagens digitais, distribuídos na rede Base.
+Cada NFT é único e gerado por meio de scripts personalizados baseados no HashLips Art Engine e Python.
+
+Características técnicas:
+•    Coleção total: 1.000 NFT (990 genéricos + 10 especiais).
+•    Padrão: ERC-721.
+•    Rede: Base.
+•    Metadados: JSON estáticos hospedados no IPFS.
+•    Raridade: Cada NFT apresenta características e combinações de raridade únicas.
+•    Royalties integradas: Percentagens definidas nos metadados (5%).
+
+Estrutura dos ficheiros da coleção:
+•    images → imagens WebP generativas de alta qualidade.
+•    json → metadados NFT contendo nome, descrição, atributos, raridade e royalties.
+•    banner → imagem principal da coleção.
+•    README → documentação da coleção.
+
+Contrato inteligente:
+•    Nome do contrato: Pino ΛRΞNΛ.
+•    Endereço: (contrato).
+•    Compilado com: Solidity 0.8.20 (otimização ativada).
+•    Estrutura: OpenZeppelin Contracts (ERC721URIStorage + Ownable + IERC2981).
+•    Funcionalidades principais: cunhagem sequencial, cunhagem específica, modificação baseURI, royalties ERC2981.
+
+Ferramentas e módulos utilizados:
+•    IDE: Visual Studio Code.
+•    Motor generativo: HashLips Art Engine.
+•    Linguagens: JavaScript / Node.js, Python.
+•    Armazenamento descentralizado: IPFS via Filebase e Lighthouse.
+•    Scripts personalizados: .mjs, .js e .py para gestão de raridade, atualização JSON e cunhagem em lote de NFT na rede Base.
+•    O projeto também inclui o jogo ΛRΞNΛ.
+
+Divirta-se.
+
+Projeto assinado: -Pino-`,
+      eo: `Pino ΛRΞNΛ estas generativa NFT-kolekto konsistanta el 1.000 ciferecaj karakteroj, distribuitaj sur la Base-reto.
+Ĉiu NFT estas unika kaj generita per personecigitaj skriptoj bazitaj sur HashLips Art Engine kaj Python.
+
+Teknikaj karakterizaĵoj:
+	•	Totala kolekto: 1.000 NFT (990 ĝeneralaj + 10 specialaj)
+	•	Normo: ERC-721
+	•	Reto: Base
+	•	Metadatenoj: statikaj JSON-oj gastigitaj sur IPFS
+	•	Rareco: Ĉiu NFT montras unikajn trajtojn kaj kombinojn de rareco
+	•	Integriitaj revoj: procentoj difinitaj en la metadatenoj (5%)
+
+Dosierstrukturo de la kolekto:
+	•	images → generativaj altkvalitaj WebP-oj
+	•	json → NFT-metadatenoj enhavantaj nomon, priskribon, atributojn, rarecon kaj revojn
+	•	banner → ĉefa bildo de la kolekto
+	•	README → dokumentado de la kolekto
+
+Smart Contract:
+	•	Nomo de kontrakto: Pino ΛRΞNΛ
+	•	Adreso: (kontrakto)
+	•	Kompilita kun: Solidity 0.8.20 (optimumigo aktivigita)
+	•	Kadroj: OpenZeppelin Contracts (ERC721URIStorage + Ownable + IERC2981)
+	•	Ĉefaj funkcioj: sekvenca mintado, specifa mintado, modifo de baseURI, ERC2981-revoj
+
+Uzitaj iloj kaj moduloj:
+	•	IDE: Visual Studio Code
+	•	Generativa motoro: HashLips Art Engine
+	•	Lingvoj: JavaScript / Node.js, Python
+	•	Decentralizita stokado: IPFS per Filebase kaj Lighthouse
+	•	Personigitaj skriptoj: .mjs, .js kaj .py por administri rarecon, ĝisdatigi JSON-ojn kaj fari batch mintadon de NFT sur la Base-reto
+	•	La projekto ankaŭ inkluzivas la ludon ΛRΞNΛ
+
+Amuziĝu!
+
+Projekto subskribita: -Pino-`
+    };
+
+    const musicPaths = {
+      en: "assets/music/Pino ΛRΞNΛ.mp3",
+      it: "assets/music/Pino ΛRΞNΛ.mp3",
+      es: "assets/music/Pino ΛRΞNΛ.mp3",
+      fr: "assets/music/Pino ΛRΞNΛ.mp3",
+      de: "assets/music/Pino ΛRΞNΛ.mp3",
+      zh: "assets/music/Pino ΛRΞNΛ.mp3",
+      ar: "assets/music/Pino ΛRΞNΛ.mp3",
+      ru: "assets/music/Pino ΛRΞNΛ.mp3",
+      ja: "assets/music/Pino ΛRΞNΛ.mp3",
+      pt: "assets/music/Pino ΛRΞNΛ.mp3",
+      eo: "assets/music/Pino ΛRΞNΛ.mp3"
+    };
+
+    const descEl = document.getElementById("description");
+    const audio = document.getElementById("bg-music");
+
+    function setLanguage(lang) {
+      descEl.textContent = descriptions[lang];
+      audio.src = musicPaths[lang];
+      audio.play().catch(() => {});
+    }
+
+    function toggleMusic() {
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    }
+
+
+    // Set default based on browser
+    const userLang = navigator.language.slice(0, 2);
+    setLanguage(Object.keys(descriptions).includes(userLang) ? userLang : 'en');
+
+    window.addEventListener('click', () => {
+      audio.play().catch(() => {});
+    }, { once: true });
+  </script>
+  <script>
+  function toggleLanguageMenu() {
+    const menu = document.getElementById('languageOptions');
+    if (menu.style.display === 'flex') {
+      menu.style.display = 'none';
+    } else {
+      menu.style.display = 'flex';
+    }
+  }
+
+
+
+  // Facoltativo: chiude il menu se clicchi fuori
+  document.addEventListener('click', function (event) {
+    const menu = document.getElementById('languageOptions');
+    const toggle = document.querySelector('.language-toggle');
+    if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+      menu.style.display = 'none';
+    }
+  });
+</script>
+</body>
+</html>
